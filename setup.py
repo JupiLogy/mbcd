@@ -7,7 +7,8 @@ REQUIRED = ['numpy',
             'gym<0.20',
             'tensorflow<2.0',
             'tqdm',
-            'cpython<3.0']
+            'cpython<3.0',
+            'tables']
 
 with open("README.md", "r") as fh:
     long_description = fh.read()

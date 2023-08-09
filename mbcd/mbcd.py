@@ -12,7 +12,7 @@ from .models.constructor import construct_model
 
 class MBCD:
 
-    def __init__(self, state_dim, action_dim, sac=None, n_hidden_units=200, num_layers=4, memory_capacity=100000, cusum_threshold=300, max_std=0.5, num_stds=2, run_id=None):
+    def __init__(self, state_dim, action_dim, sac=None, n_hidden_units=200, num_layers=4, memory_capacity=20000, cusum_threshold=300, max_std=0.5, num_stds=2, run_id=None):
         self.run_id = run_id
 
         self.state_dim = state_dim
