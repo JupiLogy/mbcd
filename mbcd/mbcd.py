@@ -125,9 +125,7 @@ class MBCD:
 
         new_model_log_pdf = -1/2 * ((self.state_dim+1)*np.log(2*np.pi) + \
                         np.log(self.variance[self.current_model]).sum(-1) + \
-                        (np.power(true_output-(true_output+self.num_stds*np.sqrt(self.variance[self.current_model])), 2) / \
-                        self.variance[self.current_model]).sum(-1))
-        new_model_log_pdf = np.log(np.exp(new_model_log_pdf).sum(0) + 1e-8)
+                        np.power(self.num_stds,2).sum())
 
         if self.var_mean[self.current_model] < self.max_std and self.counter > self.min_steps:
             log_ratio =  new_model_log_pdf - self.log_prob[self.current_model]
